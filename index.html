@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Canna Studio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">C</div>
+          <div>
+            <h1>Canna</h1>
+            <p>2D genre studio</p>
+          </div>
+        </div>
+
+        <section class="panel">
+          <div class="panel-title">프로젝트</div>
+          <input id="projectName" class="text-input" value="Untitled Canna Game" />
+          <div class="button-row">
+            <button id="newProject" class="tool-button" title="새 프로젝트">＋</button>
+            <button id="saveProject" class="tool-button primary" title="저장">▣</button>
+            <button id="exportProject" class="tool-button" title="JSON 내보내기">⇩</button>
+          </div>
+          <label class="file-picker">
+            JSON 불러오기
+            <input id="importProject" type="file" accept="application/json,.json" />
+          </label>
+        </section>
+
+        <section class="panel make-panel">
+          <div class="panel-title">Make</div>
+          <textarea id="makePrompt" class="make-input" placeholder="만들고 싶은 2D 게임을 말해 주세요. 예: 비 오는 도시의 미스터리 비주얼 노벨"></textarea>
+          <div class="button-row">
+            <button id="generateFromPrompt" class="command-button">생성</button>
+            <button id="remixSeed" class="small-button">씨앗 변환</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">테마</div>
+          <div id="themeGrid" class="theme-grid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">장르 모드</div>
+          <div id="genreTabs" class="genre-tabs"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">에셋</div>
+          <div id="assetList" class="asset-list"></div>
+          <div class="inline-form">
+            <input id="assetName" class="text-input" placeholder="에셋 이름" />
+            <button id="addAsset" class="small-button">추가</button>
+          </div>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <span id="genreLabel" class="eyebrow">Visual Novel</span>
+            <h2 id="workspaceTitle">비주얼 노벨 제작</h2>
+          </div>
+          <div class="status-strip">
+            <span id="statusText">준비됨</span>
+            <button id="playPreview" class="command-button">미리보기</button>
+          </div>
+        </header>
+
+        <section class="mode-layout">
+          <nav id="toolTabs" class="tool-tabs"></nav>
+          <section id="editorPanel" class="editor-panel"></section>
+          <aside id="inspector" class="inspector"></aside>
+        </section>
+      </main>
+
+      <aside class="preview">
+        <div class="preview-header">
+          <div>
+            <span class="eyebrow">Live Preview</span>
+            <h2>플레이 테스트</h2>
+          </div>
+        </div>
+        <div id="previewStage" class="preview-stage"></div>
+        <div id="jsonOutput" class="json-output" aria-label="JSON output"></div>
+      </aside>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
