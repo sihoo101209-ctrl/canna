@@ -136,6 +136,117 @@ const themes = [
   { id: "neonmint", name: "네온 민트", mood: "작업실, 전자음, 빠른 프로토타입", bg: "#061311", panel: "rgba(255,255,255,.082)", strong: "rgba(255,255,255,.14)", text: "#f2fffb", muted: "#b2d8cf", line: "rgba(117,255,218,.23)", accent: "#6bffd7", accent2: "#f7ff8a", accent3: "#70a7ff", ink: "#031815", rose: "#ff9bd2" },
 ];
 
+const themeMeta = {
+  crystal: {
+    style: "crystal-stage",
+    symbol: "MAP",
+    role: "구조 설계 담당",
+    focus: "장르 템플릿, 기능 아틀라스, 프로젝트 구조 정리에 강합니다.",
+    traits: ["구조", "기록", "정리"],
+    features: ["장르 템플릿", "기능 아틀라스", "JSON 내보내기", "프로젝트 관리"],
+    visual: "푸른 수정판 위에 게임 구조가 층층이 정리되는 느낌",
+  },
+  lavender: {
+    style: "lavender-script",
+    symbol: "VN",
+    role: "스토리와 대화 담당",
+    focus: "비주얼 노벨, 캐릭터 말투, 선택지 분기, 감정 곡선에 잘 어울립니다.",
+    traits: ["서사", "선택지", "감정"],
+    features: ["비주얼 노벨 기능", "스토리 구조", "대화 특화", "연출"],
+    visual: "보랏빛 대본 조각과 별빛 선택지가 떠 있는 배경",
+  },
+  snow: {
+    style: "snow-test",
+    symbol: "QA",
+    role: "검증과 접근성 담당",
+    focus: "누락된 에셋, 도달 불가능한 엔딩, 접근성 체크를 차분히 살핍니다.",
+    traits: ["검증", "접근성", "명확함"],
+    features: ["미리보기/테스트", "테스트/검증", "접근성", "현지화"],
+    visual: "흰 격자와 투명한 체크 포인트가 놓인 설원형 작업대",
+  },
+  catmoon: {
+    style: "moon-dialogue",
+    symbol: "NPC",
+    role: "캐릭터와 NPC 담당",
+    focus: "캐릭터 관계, NPC 대사, 호감도 이벤트, 생활 시뮬레이션에 어울립니다.",
+    traits: ["캐릭터", "관계", "일정"],
+    features: ["대화 특화", "월드빌딩", "농장/생활 시뮬레이션", "퀘스트"],
+    visual: "달빛 말풍선과 부드러운 관계선이 이어지는 밤 배경",
+  },
+  ember: {
+    style: "ember-combat",
+    symbol: "ATK",
+    role: "전투와 밸런스 담당",
+    focus: "전투 수치, 보스 페이즈, 위험 보상, 난이도 곡선을 조정합니다.",
+    traits: ["전투", "수치", "긴장"],
+    features: ["전투/밸런스", "AI/적 행동", "로그라이크 기능", "카드/덱빌딩"],
+    visual: "붉은 전투 로그와 보스 체력선이 겹친 열기 있는 배경",
+  },
+  traveler: {
+    style: "traveler-map",
+    symbol: "MAP",
+    role: "맵과 탐험 담당",
+    focus: "탑다운 RPG, 이동 그래프, 포탈 연결, 탐험 동선에 강합니다.",
+    traits: ["탐험", "지도", "동선"],
+    features: ["2D 맵", "탑다운 RPG 기능", "레벨 디자인", "퀘스트"],
+    visual: "파도색 지도와 연결 노드가 펼쳐지는 탐험 배경",
+  },
+  foxrain: {
+    style: "fox-mystery",
+    symbol: "MYS",
+    role: "미스터리와 이벤트 담당",
+    focus: "단서, 조건부 이벤트, 숨겨진 플래그, 포인트 앤 클릭 흐름에 어울립니다.",
+    traits: ["단서", "비밀", "이벤트"],
+    features: ["호러/미스터리", "노코드/로우코드 로직", "퀘스트", "포인트 앤 클릭"],
+    visual: "비 오는 보랏빛 화면에 단서 카드가 겹쳐지는 배경",
+  },
+  cloud: {
+    style: "cloud-export",
+    symbol: "WEB",
+    role: "내보내기와 웹 배포 담당",
+    focus: "웹 게임, GitHub Pages, 샘플 HTML, 프로젝트 공개 흐름을 맡습니다.",
+    traits: ["웹", "공유", "배포"],
+    features: ["내보내기", "실제 코드 생성", "프로젝트 관리", "마켓/커뮤니티"],
+    visual: "푸른 구름형 서버 패널과 업로드 경로가 보이는 배경",
+  },
+  flower: {
+    style: "flower-world",
+    symbol: "WRD",
+    role: "세계관과 분위기 담당",
+    focus: "지역, 세력, 장소 분위기, 감정적인 장면 만들기에 좋습니다.",
+    traits: ["세계관", "분위기", "회복"],
+    features: ["월드빌딩", "스토리 구조", "연출", "농장/생활 시뮬레이션"],
+    visual: "꽃빛 정원 위로 장소 카드와 감정선이 피어나는 배경",
+  },
+  yuzu: {
+    style: "yuzu-mvp",
+    symbol: "MVP",
+    role: "작은 완성 담당",
+    focus: "1시간 MVP, 초보자용 범위 축소, 체크리스트 정리에 어울립니다.",
+    traits: ["시작", "축소", "완성"],
+    features: ["Canna다운 기능", "제작 워크플로우", "프로젝트 관리", "미리보기/테스트"],
+    visual: "유자빛 체크리스트와 새싹형 진행 막대가 있는 배경",
+  },
+  feather: {
+    style: "feather-archive",
+    symbol: "LOG",
+    role: "기록과 포트폴리오 담당",
+    focus: "릴리즈 노트, 개발 로그, 변경 기록, 포트폴리오 정리에 좋습니다.",
+    traits: ["기록", "회고", "정돈"],
+    features: ["제작 워크플로우", "프로젝트 관리", "협업", "현지화"],
+    visual: "새벽빛 문서 조각과 로그 줄이 조용히 쌓이는 배경",
+  },
+  neonmint: {
+    style: "mint-code",
+    symbol: "API",
+    role: "AI와 코드 연결 담당",
+    focus: "OpenAI API 연결 준비, 생성 규칙, HTML/JS 내보내기 구조에 강합니다.",
+    traits: ["AI", "코드", "자동화"],
+    features: ["AI 제작 보조", "실제 코드 생성", "노코드/로우코드 로직", "내보내기"],
+    visual: "민트색 터미널 라인과 API 노드가 흐르는 작업실 배경",
+  },
+};
+
 let state = createProject("이름 없는 Canna 게임", "vn", "기억을 잃은 인형이 비 오는 도시에서 주인을 찾는다.");
 
 const $ = (selector) => document.querySelector(selector);
@@ -276,13 +387,20 @@ function render() {
 function renderThemes() {
   themeGrid.innerHTML = themes.map((theme) => `
     <button class="theme-card ${state.theme === theme.id ? "active" : ""}" data-theme="${theme.id}">
+      <span class="theme-head">
+        <span class="theme-symbol">${themeInfo(theme.id).symbol}</span>
+        <span>
+          <span class="theme-name">${theme.name}</span>
+          <span class="theme-mood">${theme.mood}</span>
+        </span>
+      </span>
       <span class="theme-swatch">
         <span style="background:${theme.accent}"></span>
         <span style="background:${theme.accent3}"></span>
         <span style="background:${theme.accent2}"></span>
       </span>
-      <span class="theme-name">${theme.name}</span>
-      <span class="theme-mood">${theme.mood}</span>
+      <span class="theme-role">${themeInfo(theme.id).role}</span>
+      <span class="theme-traits">${themeInfo(theme.id).traits.map((trait) => `<span>${trait}</span>`).join("")}</span>
     </button>
   `).join("");
   themeGrid.querySelectorAll(".theme-card").forEach((button) => {
@@ -292,6 +410,7 @@ function renderThemes() {
 
 function applyTheme(id, rerender = false) {
   const theme = themes.find((item) => item.id === id) || themes[0];
+  const meta = themeInfo(theme.id);
   state.theme = theme.id;
   localStorage.setItem("canna-theme", theme.id);
   const vars = {
@@ -314,10 +433,17 @@ function applyTheme(id, rerender = false) {
   Object.entries(vars).forEach(([key, value]) => {
     document.documentElement.style.setProperty(`--${key}`, value);
   });
+  document.body.dataset.themeStyle = meta.style;
+  document.body.dataset.themeSymbol = meta.symbol;
+  document.body.dataset.themeRole = meta.role;
   if (rerender) {
     setStatus(`${theme.name} 테마 적용`);
     render();
   }
+}
+
+function themeInfo(id = state.theme) {
+  return themeMeta[id] || themeMeta.crystal;
 }
 
 function renderGenreTabs() {
@@ -378,12 +504,18 @@ function renderEditor() {
 
 function renderDashboard() {
   const groups = ["말로 만들기", "AI 제작 보조", "장르 템플릿", ...activeGenre().featureGroups, "에셋 기능", "노코드/로우코드 로직", "실제 코드 생성", "미리보기/테스트", "프로젝트 관리", "Canna다운 기능"];
+  const meta = themeInfo();
   editorPanel.innerHTML = `
     <div class="hero-workbench">
       <div>
         <span class="eyebrow">게임 씨앗</span>
         <h3>${escapeHtml(state.seed)}</h3>
         <p>${state.canna.summary}</p>
+      </div>
+      <div class="theme-visual" data-symbol="${meta.symbol}">
+        <span class="eyebrow">현재 테마 담당</span>
+        <strong>${meta.role}</strong>
+        <p>${meta.visual}</p>
       </div>
       <button id="makeMvp" class="command-button">MVP로 줄이기</button>
     </div>
@@ -510,10 +642,17 @@ function displayValue(value) {
 }
 
 function renderInspector() {
+  const meta = themeInfo();
   inspector.innerHTML = `
     <div class="panel-title">Canna 제안</div>
     <div class="property-row"><label>현재 장르</label><strong>${activeGenre().label}</strong></div>
     <div class="property-row"><label>범위</label><strong>${state.scope}</strong></div>
+    <div class="property-row theme-duty">
+      <label>테마 담당</label>
+      <strong>${meta.role}</strong>
+      <span>${meta.focus}</span>
+      <div class="chip-row">${meta.features.map((item) => `<span class="chip">${item}</span>`).join("")}</div>
+    </div>
     <div class="property-row"><label>핵심 루프</label><div class="chip-row">${state.canna.coreLoop.map((item) => `<span class="chip">${item}</span>`).join("")}</div></div>
     <div class="property-row"><label>할 일</label><div class="list-stack">${state.canna.todo.map((item) => `<div class="mini-row">${item}</div>`).join("")}</div></div>
     <div class="property-row"><label>게임 씨앗 변환</label><div class="list-stack">${state.canna.seedVariants.map((variant) => `<button class="mini-row seed-variant" data-genre="${variant.genre}">${variant.pitch}</button>`).join("")}</div></div>

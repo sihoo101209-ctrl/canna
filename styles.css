@@ -46,6 +46,119 @@ body::before {
   background-size: 72px 72px, 116px 116px;
 }
 
+body::after {
+  content: attr(data-theme-symbol);
+  position: fixed;
+  right: clamp(18px, 5vw, 72px);
+  top: clamp(90px, 15vh, 170px);
+  z-index: -1;
+  pointer-events: none;
+  color: color-mix(in srgb, var(--accent) 18%, transparent);
+  font-size: clamp(72px, 13vw, 190px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+  text-shadow: 0 0 48px color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
+body[data-theme-style="crystal-stage"] {
+  background:
+    linear-gradient(120deg, color-mix(in srgb, var(--accent) 9%, transparent), transparent 32%),
+    radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 30%),
+    conic-gradient(from 230deg at 82% 18%, color-mix(in srgb, var(--accent-3) 18%, transparent), transparent 36%),
+    var(--bg);
+}
+
+body[data-theme-style="lavender-script"] {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(214, 166, 255, .28), transparent 28%),
+    linear-gradient(135deg, rgba(255, 240, 166, .08), transparent 34%),
+    repeating-linear-gradient(160deg, transparent 0 28px, rgba(255, 255, 255, .035) 29px 30px),
+    var(--bg);
+}
+
+body[data-theme-style="snow-test"] {
+  background:
+    linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px),
+    radial-gradient(circle at 70% 14%, rgba(185, 242, 255, .24), transparent 28%),
+    var(--bg);
+  background-size: 46px 46px, 46px 46px, auto, auto;
+}
+
+body[data-theme-style="moon-dialogue"] {
+  background:
+    radial-gradient(ellipse at 76% 18%, rgba(255, 209, 232, .25), transparent 30%),
+    radial-gradient(circle at 22% 22%, rgba(173, 187, 255, .18), transparent 24%),
+    linear-gradient(145deg, rgba(255, 233, 168, .09), transparent 38%),
+    var(--bg);
+}
+
+body[data-theme-style="ember-combat"] {
+  background:
+    radial-gradient(circle at 72% 24%, rgba(255, 111, 145, .30), transparent 26%),
+    repeating-linear-gradient(90deg, rgba(255, 154, 168, .055) 0 2px, transparent 2px 34px),
+    linear-gradient(135deg, rgba(255, 224, 138, .09), transparent 34%),
+    var(--bg);
+}
+
+body[data-theme-style="traveler-map"] {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(109, 243, 255, .24), transparent 26%),
+    radial-gradient(circle at 80% 28%, rgba(153, 255, 217, .18), transparent 30%),
+    linear-gradient(45deg, transparent 0 48%, rgba(255, 255, 255, .04) 49% 51%, transparent 52%),
+    var(--bg);
+}
+
+body[data-theme-style="fox-mystery"] {
+  background:
+    radial-gradient(circle at 80% 12%, rgba(198, 155, 255, .28), transparent 24%),
+    linear-gradient(90deg, rgba(255, 232, 145, .08), transparent 36%),
+    repeating-linear-gradient(135deg, transparent 0 18px, rgba(255, 255, 255, .035) 19px 20px),
+    var(--bg);
+}
+
+body[data-theme-style="cloud-export"] {
+  background:
+    radial-gradient(ellipse at 20% 14%, rgba(125, 220, 255, .25), transparent 28%),
+    radial-gradient(ellipse at 80% 28%, rgba(183, 217, 255, .24), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, .045), transparent 45%),
+    var(--bg);
+}
+
+body[data-theme-style="flower-world"] {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 183, 213, .22), transparent 20%),
+    radial-gradient(circle at 85% 18%, rgba(231, 161, 255, .18), transparent 23%),
+    radial-gradient(circle at 70% 70%, rgba(255, 240, 173, .12), transparent 28%),
+    var(--bg);
+}
+
+body[data-theme-style="yuzu-mvp"] {
+  background:
+    radial-gradient(circle at 75% 18%, rgba(217, 255, 114, .30), transparent 24%),
+    radial-gradient(circle at 18% 26%, rgba(142, 231, 176, .18), transparent 24%),
+    linear-gradient(135deg, rgba(255, 245, 157, .08), transparent 36%),
+    var(--bg);
+}
+
+body[data-theme-style="feather-archive"] {
+  background:
+    linear-gradient(rgba(198, 215, 255, .04) 1px, transparent 1px),
+    radial-gradient(circle at 12% 9%, rgba(139, 233, 253, .18), transparent 28%),
+    radial-gradient(circle at 84% 18%, rgba(182, 156, 255, .16), transparent 34%),
+    var(--bg);
+  background-size: 100% 42px, auto, auto, auto;
+}
+
+body[data-theme-style="mint-code"] {
+  background:
+    repeating-linear-gradient(90deg, rgba(107, 255, 215, .055) 0 1px, transparent 1px 38px),
+    repeating-linear-gradient(0deg, rgba(247, 255, 138, .035) 0 1px, transparent 1px 38px),
+    radial-gradient(circle at 82% 16%, rgba(107, 255, 215, .25), transparent 26%),
+    var(--bg);
+}
+
 button,
 input,
 select,
@@ -273,6 +386,26 @@ textarea {
   text-align: left;
 }
 
+.theme-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.theme-symbol {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .theme-card.active {
   outline: 2px solid var(--accent);
   border-color: transparent;
@@ -296,9 +429,30 @@ textarea {
 }
 
 .theme-mood {
+  display: block;
   color: var(--muted);
   font-size: 11px;
   line-height: 1.35;
+}
+
+.theme-role {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.theme-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.theme-traits span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 6px;
+  color: var(--muted);
+  font-size: 11px;
 }
 
 .asset-list {
@@ -388,6 +542,48 @@ textarea {
   background: linear-gradient(135deg, color-mix(in srgb, var(--panel-strong) 88%, transparent), color-mix(in srgb, var(--accent) 7%, var(--panel)));
   border-radius: 8px;
   box-shadow: var(--shadow);
+}
+
+.theme-visual {
+  position: relative;
+  flex: 0 1 240px;
+  min-height: 128px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 40%),
+    linear-gradient(135deg, color-mix(in srgb, var(--accent-3) 14%, transparent), transparent 56%),
+    color-mix(in srgb, var(--panel-strong) 72%, transparent);
+}
+
+.theme-visual::after {
+  content: attr(data-symbol);
+  position: absolute;
+  right: 12px;
+  bottom: -10px;
+  color: color-mix(in srgb, var(--accent) 22%, transparent);
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.theme-visual strong {
+  display: block;
+  margin: 7px 0;
+  color: var(--accent);
+}
+
+.theme-visual p {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+}
+
+.theme-duty span {
+  color: var(--muted);
+  line-height: 1.45;
 }
 
 .hero-workbench h3 {
