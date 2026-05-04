@@ -641,6 +641,47 @@ function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[char]));
 }
 
+function normalizeState() {
+  const fallback = createProject("이름 없는 Canna 게임", "vn", "기억을 잃은 인형이 비 오는 도시에서 주인을 찾는다.");
+  if (!state || typeof state !== "object") state = fallback;
+  if (!genres[state.genre]) state.genre = "vn";
+  if (!state.name) state.name = fallback.name;
+  if (!state.seed) state.seed = fallback.seed;
+  if (!state.scope) state.scope = fallback.scope;
+  if (!state.theme || !themes.some((item) => item.id === state.theme)) state.theme = localStorage.getItem("canna-theme") || "crystal";
+  if (!state.tab || !genres[state.genre].tabs.includes(state.tab)) state.tab = "대시보드";
+  if (!state.data || typeof state.data !== "object") state.data = buildData(state.genre, state.seed);
+  if (!Array.isArray(state.assets)) state.assets = fallback.assets;
+  if (!Array.isArray(state.notes)) state.notes = [];
+  if (!Array.isArray(state.issues)) state.issues = fallback.issues;
+  if (!Array.isArray(state.roadmap)) state.roadmap = fallback.roadmap;
+  if (!state.canna || typeof state.canna !== "object") state.canna = fallback.canna;
+  if (!state.canna.summary) state.canna.summary = fallback.canna.summary;
+  if (!Array.isArray(state.canna.coreLoop)) state.canna.coreLoop = fallback.canna.coreLoop;
+  if (!Array.isArray(state.canna.todo)) state.canna.todo = fallback.canna.todo;
+  if (!Array.isArray(state.canna.warnings)) state.canna.warnings = fallback.canna.warnings;
+  if (state.genre === "rogue" && (!state.data.dungeon || !Array.isArray(state.data.dungeon.tiles))) {
+    state.data = buildData("rogue", state.seed);
+  }
+}
+
+function handleFeatureClick(label) {
+  const text = label.trim();
+  if (!text) return;
+  state.notes.unshift({ text: `기능 선택: ${text}`, at: new Date().toLocaleString() });
+  if (!state.canna.todo.includes(text)) state.canna.todo.unshift(text);
+  setAssistant(`기능을 선택했습니다: ${text}\n오른쪽 할 일과 프로젝트 노트에 추가했습니다.`);
+  setStatus("기능 선택됨");
+  render();
+}
+
+document.addEventListener("click", (event) => {
+  const featureButton = event.target.closest(".feature-chip");
+  if (featureButton) {
+    handleFeatureClick(featureButton.textContent);
+  }
+});
+
 projectName.addEventListener("input", () => {
   state.name = projectName.value;
   jsonOutput.textContent = JSON.stringify(state, null, 2);
@@ -677,7 +718,7 @@ $("#importProject").addEventListener("change", async (event) => {
   if (!file) return;
   try {
     state = JSON.parse(await file.text());
-    state.tab = state.tab || "대시보드";
+    normalizeState();
     setAssistant("JSON 프로젝트를 불러왔습니다.");
     render();
   } catch {
@@ -689,12 +730,12 @@ const saved = localStorage.getItem("canna-project");
 if (saved) {
   try {
     state = JSON.parse(saved);
-    if (!genres[state.genre]) state.genre = "vn";
-    if (!state.tab) state.tab = "대시보드";
+    normalizeState();
   } catch {
     localStorage.removeItem("canna-project");
   }
 }
 
+normalizeState();
 setAssistant("Canna가 준비됐습니다. 상단 명령창에 '쉬운 MVP', '선택지 늘려줘', '샘플 내보내기'처럼 입력해 보세요.");
 render();
