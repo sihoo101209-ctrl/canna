@@ -33,7 +33,7 @@
 
         <section class="panel make-panel">
           <div class="panel-title">말로 만들기</div>
-          <textarea id="makePrompt" class="make-input" placeholder="만들고 싶은 2D 게임을 말해 주세요. 예: 비 오는 도시의 미스터리 비주얼 노벨"></textarea>
+          <textarea id="makePrompt" class="make-input" placeholder="예: 비 오는 도시에서 기억을 잃은 인형이 주인을 찾는 비주얼 노벨"></textarea>
           <div class="button-row">
             <button id="generateFromPrompt" class="command-button">생성</button>
             <button id="remixSeed" class="small-button">씨앗 변환</button>
@@ -67,7 +67,8 @@
             <h2 id="workspaceTitle">비주얼 노벨 제작</h2>
           </div>
           <div class="status-strip">
-            <span id="statusText">준비됨</span>
+            <input id="commandInput" class="command-input" placeholder="명령: 더 어둡게, 쉬운 MVP, 샘플 내보내기..." />
+            <button id="runCommand" class="command-button">실행</button>
             <a class="command-link" href="./examples/rainy-doll-vn.html">샘플 게임</a>
             <button id="playPreview" class="command-button">미리보기</button>
           </div>
@@ -88,6 +89,7 @@
           </div>
         </div>
         <div id="previewStage" class="preview-stage"></div>
+        <div id="assistantOutput" class="assistant-output"></div>
         <div id="jsonOutput" class="json-output" aria-label="JSON output"></div>
       </aside>
     </div>

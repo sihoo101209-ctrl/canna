@@ -290,6 +290,17 @@ textarea {
   margin-top: 10px;
 }
 
+.command-input {
+  width: min(360px, 32vw);
+  min-width: 180px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 82%, #000);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+  outline: none;
+}
+
 .tool-button,
 .small-button,
 .command-button,
@@ -586,6 +597,56 @@ textarea {
   gap: 10px;
 }
 
+.studio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.studio-card {
+  display: grid;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px;
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+}
+
+.studio-card header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.studio-card header span {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.studio-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.progress-shell {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text) 10%, transparent);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.wrap-row {
+  flex-wrap: wrap;
+}
+
 .feature-card {
   display: grid;
   gap: 10px;
@@ -804,6 +865,23 @@ button.mini-row:hover {
   font-size: 12px;
 }
 
+.assistant-output {
+  margin-top: 12px;
+  padding: 10px;
+  min-height: 90px;
+  max-height: 180px;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 38%),
+    color-mix(in srgb, var(--panel) 84%, #000);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .preview-board {
   display: grid;
   align-content: center;
@@ -845,7 +923,8 @@ button.mini-row:hover {
   .mode-layout,
   .map-editor,
   .editor-grid,
-  .feature-grid {
+  .feature-grid,
+  .studio-grid {
     grid-template-columns: 1fr;
   }
 
@@ -864,5 +943,13 @@ button.mini-row:hover {
   .topbar {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .status-strip {
+    flex-wrap: wrap;
+  }
+
+  .command-input {
+    width: 100%;
   }
 }
