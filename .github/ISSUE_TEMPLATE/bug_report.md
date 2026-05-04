@@ -1,25 +1,25 @@
 ---
-name: Bug report
-about: Report a Canna Studio problem
-title: "[Bug] "
+name: 버그 제보
+about: Canna Studio에서 생긴 문제를 알려 주세요
+title: "[버그] "
 labels: bug
 assignees: ""
 ---
 
-## What happened?
+## 무슨 일이 있었나요?
 
-Describe the bug.
+문제를 설명해 주세요.
 
-## Steps
+## 재현 순서
 
 1.
 2.
 3.
 
-## Expected
+## 기대한 동작
 
-What should have happened?
+원래 어떻게 동작해야 했나요?
 
-## Browser
+## 브라우저
 
-What browser/device did you use?
+사용한 브라우저나 기기를 적어 주세요.

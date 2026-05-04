@@ -1,8 +1,8 @@
-# AI Provider Plan
+# AI 제공자 계획
 
-Canna Studio currently uses local rules to simulate vibe coding.
+Canna Studio는 현재 로컬 규칙으로 바이브 코딩 흐름을 흉내 냅니다.
 
-The future AI layer should be small and replaceable:
+이후 AI 계층은 작고 교체 가능한 구조가 좋습니다.
 
 ```js
 async function generateGameDraft({ prompt, genre, project }) {
@@ -15,22 +15,22 @@ async function generateGameDraft({ prompt, genre, project }) {
 }
 ```
 
-## Principles
+## 원칙
 
-- Keep project data editable after generation.
-- Never hide generated JSON from the user.
-- Ask for missing design choices instead of inventing too much.
-- Keep generation scoped to the selected 2D genre.
-- Let the user remix one seed into multiple genres.
+- 생성된 뒤에도 프로젝트 데이터를 사용자가 직접 고칠 수 있어야 합니다.
+- 생성된 JSON을 숨기지 않습니다.
+- 중요한 설정이 부족하면 너무 많이 지어내기보다 사용자에게 물어봅니다.
+- 선택한 2D 장르 범위 안에서 생성합니다.
+- 하나의 게임 씨앗을 여러 장르로 바꿔 볼 수 있게 합니다.
 
-## Planned Commands
+## 계획된 명령
 
-- Make a new game
-- Improve this scene
-- Add 20 items
-- Make this easier
-- Make this scarier
-- Convert to roguelike
-- Find missing systems
-- Make a 1-hour MVP
-- Export playable HTML
+- 새 게임 만들기
+- 이 장면 개선하기
+- 아이템 20개 추가하기
+- 난이도 쉽게 만들기
+- 더 무섭게 만들기
+- 로그라이크로 변환하기
+- 빠진 시스템 찾기
+- 1시간 안에 만들 수 있는 MVP로 줄이기
+- 플레이 가능한 HTML로 내보내기

@@ -1,24 +1,24 @@
-# Release Notes
+# 릴리즈 노트
 
-## v0.1.0 - Canna Studio Prototype
+## v0.1.0 - Canna Studio 프로토타입
 
-Initial public prototype.
+첫 공개 프로토타입입니다.
 
-### Added
+### 추가됨
 
-- 2D genre-focused app shell
-- Make prompt for local rules-based generation
-- Game seed remixing
-- 12 genre templates
-- 12 abstract visual themes
-- Feature atlas
-- Live preview
-- JSON import/export
-- Browser storage
-- Roguelike tile editor
-- Sample exported visual novel
-- GitHub Pages workflow
+- 2D 장르 중심 앱 화면
+- 로컬 규칙 기반 Make 생성 입력창
+- 게임 씨앗 장르 변환
+- 12개 장르 템플릿
+- 12개 추상 시각 테마
+- 기능 아틀라스
+- 실시간 미리보기
+- JSON 내보내기/불러오기
+- 브라우저 저장
+- 로그라이크 타일 편집기
+- 샘플 비주얼 노벨
+- GitHub Pages 워크플로우
 
-### Notes
+### 참고
 
-The current generation is not connected to a real AI API yet. It is designed as a prototype of the workflow and data model.
+현재 생성 기능은 아직 실제 AI API와 연결되어 있지 않습니다. 지금 버전은 제작 흐름과 데이터 구조를 보여 주는 프로토타입입니다.

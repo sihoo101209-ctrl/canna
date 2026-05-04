@@ -1,58 +1,58 @@
-# Canna Studio Roadmap
+# Canna Studio 로드맵
 
-## v0.1 Prototype
+## v0.1 프로토타입
 
-- Browser app shell
-- Genre templates
-- Make prompt
-- Game seed remix
-- Theme presets
-- JSON import/export
-- Live preview
+- 브라우저 앱 화면
+- 장르 템플릿
+- Make 입력창
+- 게임 씨앗 변환
+- 테마 프리셋
+- JSON 내보내기/불러오기
+- 실시간 미리보기
 
-## v0.2 Project Builder
+## v0.2 프로젝트 빌더
 
-- Better mobile navigation
-- Undo and redo
-- Command palette
-- Project templates
-- Playable visual novel export
-- Playable roguelike export
-- Screenshot capture workflow
+- 더 나은 모바일 내비게이션
+- 되돌리기와 다시 실행
+- 명령 팔레트
+- 프로젝트 템플릿
+- 플레이 가능한 비주얼 노벨 내보내기
+- 플레이 가능한 로그라이크 내보내기
+- 스크린샷 캡처 흐름
 
-## v0.3 Real AI Layer
+## v0.3 실제 AI 계층
 
-- Provider interface for AI generation
-- Prompt history
-- Safety limits for generated project data
-- User-editable generation rules
-- "Improve this scene" commands
-- "Make MVP" scope planner
+- AI 생성을 위한 제공자 인터페이스
+- 프롬프트 기록
+- 생성된 프로젝트 데이터의 안전 제한
+- 사용자가 직접 고칠 수 있는 생성 규칙
+- "이 장면 개선하기" 명령
+- "MVP로 줄이기" 범위 계획 도구
 
-## v0.4 Game Export
+## v0.4 게임 내보내기
 
-- HTML/JS game export
-- Phaser starter export
-- Ren'Py script export
-- Tiled JSON export
-- Godot-friendly data export
+- HTML/JS 게임 내보내기
+- Phaser 시작 프로젝트 내보내기
+- Ren'Py 스크립트 내보내기
+- Tiled JSON 내보내기
+- Godot에서 쓰기 쉬운 데이터 내보내기
 
-## v0.5 Collaboration
+## v0.5 협업
 
-- Project changelog
-- Comment notes
-- Design task board
-- Translation table
-- Playtest note tracker
+- 프로젝트 변경 기록
+- 댓글 메모
+- 디자인 작업 보드
+- 번역 표
+- 플레이테스트 노트 기록
 
-## Backlog
+## 나중에 만들 것
 
-- Sprite sheet slicing
-- Sound and music cue editor
-- Visual novel route graph
-- Roguelike combat simulator
-- Platformer movement tuner
-- Card synergy graph
-- Accessibility checks
-- Localization checks
-- GitHub Pages publishing helper
+- 스프라이트 시트 자르기
+- 사운드와 음악 큐 편집기
+- 비주얼 노벨 루트 그래프
+- 로그라이크 전투 시뮬레이터
+- 플랫포머 조작감 조정기
+- 카드 시너지 그래프
+- 접근성 검사
+- 현지화 검사
+- GitHub Pages 게시 도우미

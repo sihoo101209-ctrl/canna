@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Canna Studio preview">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Canna Studio 미리보기">
   <defs>
     <radialGradient id="a" cx="18%" cy="10%" r="55%">
       <stop offset="0" stop-color="#8be9fd" stop-opacity=".45"/>
@@ -32,33 +32,33 @@
   <circle cx="116" cy="120" r="24" fill="#14352e" stroke="#8be9fd"/>
   <text x="108" y="130" fill="#8be9fd" font-family="Arial, sans-serif" font-size="28" font-weight="700">C</text>
   <text x="152" y="116" fill="#f7fbff" font-family="Arial, sans-serif" font-size="26" font-weight="800">Canna</text>
-  <text x="152" y="140" fill="#bcc9ea" font-family="Arial, sans-serif" font-size="13">2D genre studio</text>
+  <text x="152" y="140" fill="#bcc9ea" font-family="Arial, sans-serif" font-size="13">2D 장르 제작소</text>
   <rect x="100" y="180" width="190" height="74" rx="14" fill="rgba(0,0,0,.22)" stroke="rgba(191,229,255,.22)"/>
   <text x="116" y="207" fill="#bcc9ea" font-family="Arial, sans-serif" font-size="13">Make</text>
   <text x="116" y="232" fill="#f7fbff" font-family="Arial, sans-serif" font-size="15">Rainy mystery VN...</text>
   <rect x="100" y="276" width="82" height="34" rx="12" fill="url(#button)"/>
-  <text x="122" y="298" fill="#061125" font-family="Arial, sans-serif" font-size="14" font-weight="700">Generate</text>
+  <text x="122" y="298" fill="#061125" font-family="Arial, sans-serif" font-size="14" font-weight="700">생성</text>
   <g>
     <rect x="100" y="350" width="82" height="54" rx="12" fill="#8be9fd"/>
     <rect x="198" y="350" width="82" height="54" rx="12" fill="#b69cff"/>
     <rect x="100" y="418" width="82" height="54" rx="12" fill="#fff1a8"/>
     <rect x="198" y="418" width="82" height="54" rx="12" fill="#ffb3d9"/>
   </g>
-  <text x="384" y="122" fill="#8be9fd" font-family="Arial, sans-serif" font-size="13" font-weight="700">GAME SEED</text>
-  <text x="384" y="162" fill="#f7fbff" font-family="Arial, sans-serif" font-size="34" font-weight="800">2D genre vibe coding tool</text>
-  <text x="384" y="198" fill="#bcc9ea" font-family="Arial, sans-serif" font-size="17">Turn an idea into editable game structures.</text>
+  <text x="384" y="122" fill="#8be9fd" font-family="Arial, sans-serif" font-size="13" font-weight="700">게임 씨앗</text>
+  <text x="384" y="162" fill="#f7fbff" font-family="Arial, sans-serif" font-size="34" font-weight="800">2D 장르 바이브 코딩 툴</text>
+  <text x="384" y="198" fill="#bcc9ea" font-family="Arial, sans-serif" font-size="17">아이디어를 편집 가능한 게임 구조로 바꿉니다.</text>
   <g fill="rgba(255,255,255,.075)" stroke="rgba(191,229,255,.22)">
     <rect x="384" y="240" width="220" height="124" rx="16"/>
     <rect x="626" y="240" width="220" height="124" rx="16"/>
     <rect x="384" y="390" width="220" height="124" rx="16"/>
     <rect x="626" y="390" width="220" height="124" rx="16"/>
   </g>
-  <text x="410" y="284" fill="#f7fbff" font-family="Arial, sans-serif" font-size="20" font-weight="700">Visual Novel</text>
-  <text x="652" y="284" fill="#f7fbff" font-family="Arial, sans-serif" font-size="20" font-weight="700">Roguelike</text>
-  <text x="410" y="434" fill="#f7fbff" font-family="Arial, sans-serif" font-size="20" font-weight="700">Feature Atlas</text>
-  <text x="652" y="434" fill="#f7fbff" font-family="Arial, sans-serif" font-size="20" font-weight="700">JSON Export</text>
+  <text x="410" y="284" fill="#f7fbff" font-family="Arial, sans-serif" font-size="20" font-weight="700">비주얼 노벨</text>
+  <text x="652" y="284" fill="#f7fbff" font-family="Arial, sans-serif" font-size="20" font-weight="700">로그라이크</text>
+  <text x="410" y="434" fill="#f7fbff" font-family="Arial, sans-serif" font-size="20" font-weight="700">기능 아틀라스</text>
+  <text x="652" y="434" fill="#f7fbff" font-family="Arial, sans-serif" font-size="20" font-weight="700">JSON 내보내기</text>
   <rect x="954" y="116" width="218" height="252" rx="18" fill="rgba(0,0,0,.24)" stroke="rgba(191,229,255,.22)"/>
-  <text x="982" y="154" fill="#8be9fd" font-family="Arial, sans-serif" font-size="13" font-weight="700">LIVE PREVIEW</text>
+  <text x="982" y="154" fill="#8be9fd" font-family="Arial, sans-serif" font-size="13" font-weight="700">실시간 미리보기</text>
   <circle cx="1064" cy="252" r="42" fill="#ffb3d9"/>
   <rect x="982" y="406" width="190" height="168" rx="14" fill="rgba(0,0,0,.24)" stroke="rgba(191,229,255,.22)"/>
   <text x="1004" y="446" fill="#bcc9ea" font-family="monospace" font-size="14">{</text>
