@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Canna Sample - Rainy Doll VN</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #070b1f;
+        --text: #f7fbff;
+        --muted: #bcc9ea;
+        --line: rgba(191, 229, 255, .24);
+        --crystal: #8be9fd;
+        --moon: #fff1a8;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 18px;
+        background:
+          radial-gradient(circle at 15% 8%, rgba(139, 233, 253, .24), transparent 34%),
+          radial-gradient(circle at 86% 14%, rgba(182, 156, 255, .2), transparent 38%),
+          var(--bg);
+        color: var(--text);
+      }
+      main {
+        width: min(860px, 100%);
+        min-height: 560px;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, .08);
+        box-shadow: 0 28px 90px rgba(0, 18, 58, .5);
+      }
+      .stage {
+        display: grid;
+        place-items: end center;
+        padding: 32px;
+        background: linear-gradient(rgba(92, 167, 255, .18), rgba(0, 0, 0, .18)), var(--scene);
+      }
+      .character {
+        width: 116px;
+        height: 220px;
+        display: grid;
+        place-items: center;
+        border-radius: 58px 58px 16px 16px;
+        background: linear-gradient(#ffb3d9, #fff1a8);
+        color: #061125;
+        font-size: 42px;
+        font-weight: 900;
+      }
+      .box {
+        padding: 20px;
+        border-top: 1px solid var(--line);
+        background: rgba(3, 7, 16, .82);
+        backdrop-filter: blur(16px);
+      }
+      .speaker {
+        color: var(--crystal);
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+      .text {
+        min-height: 56px;
+        color: var(--text);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      .choices {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      button {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 11px 14px;
+        color: #061125;
+        background: linear-gradient(135deg, var(--crystal), var(--moon));
+        font: inherit;
+        font-weight: 800;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="stage" class="stage">
+        <div id="character" class="character">C</div>
+      </section>
+      <section class="box">
+        <div id="speaker" class="speaker"></div>
+        <div id="text" class="text"></div>
+        <div id="choices" class="choices"></div>
+      </section>
+    </main>
+    <script>
+      const scenes = {
+        start: {
+          speaker: "Canna",
+          text: "비 오는 도시에서, 기억을 잃은 인형이 오래된 역의 불빛을 바라본다.",
+          character: "C",
+          scene: "linear-gradient(#24475a, #101722)",
+          choices: [
+            { label: "발자국을 따라간다", next: "station" },
+            { label: "가방 속 단추를 본다", next: "button" },
+          ],
+        },
+        station: {
+          speaker: "Guide",
+          text: "플랫폼 끝에서 누군가 속삭인다. '주인을 찾고 싶다면, 먼저 네 이름을 기억해.'",
+          character: "G",
+          scene: "linear-gradient(#1e2f55, #080c16)",
+          choices: [
+            { label: "이름을 묻는다", next: "true" },
+            { label: "조용히 돌아선다", next: "quiet" },
+          ],
+        },
+        button: {
+          speaker: "Canna",
+          text: "작은 단추에는 희미하게 같은 문장이 새겨져 있다. '돌아갈 곳은 아직 사라지지 않았다.'",
+          character: "C",
+          scene: "linear-gradient(#3a244c, #10101b)",
+          choices: [
+            { label: "역으로 간다", next: "station" },
+            { label: "비를 기다린다", next: "quiet" },
+          ],
+        },
+        true: {
+          speaker: "Canna",
+          text: "이름을 되찾은 순간, 도시는 처음으로 따뜻한 색을 낸다. True Ending.",
+          character: "C",
+          scene: "linear-gradient(#4b72a8, #231e42)",
+          choices: [{ label: "처음부터", next: "start" }],
+        },
+        quiet: {
+          speaker: "Narrator",
+          text: "비는 계속 내리고, 작은 인형은 아직 모르는 이야기를 품은 채 잠든다. Quiet Ending.",
+          character: "N",
+          scene: "linear-gradient(#111827, #070b1f)",
+          choices: [{ label: "처음부터", next: "start" }],
+        },
+      };
+
+      function show(id) {
+        const scene = scenes[id];
+        document.querySelector("#speaker").textContent = scene.speaker;
+        document.querySelector("#text").textContent = scene.text;
+        document.querySelector("#character").textContent = scene.character;
+        document.querySelector("#stage").style.setProperty("--scene", scene.scene);
+        document.querySelector("#choices").innerHTML = "";
+        scene.choices.forEach((choice) => {
+          const button = document.createElement("button");
+          button.textContent = choice.label;
+          button.addEventListener("click", () => show(choice.next));
+          document.querySelector("#choices").append(button);
+        });
+      }
+
+      show("start");
+    </script>
+  </body>
+</html>

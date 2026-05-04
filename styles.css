@@ -209,6 +209,19 @@ textarea {
   white-space: nowrap;
 }
 
+.command-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 11px;
+  background: var(--panel-strong);
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
 .file-picker {
   display: block;
   margin-top: 10px;
