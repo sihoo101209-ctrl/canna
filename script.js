@@ -391,7 +391,7 @@ function renderThemes() {
         <span class="theme-symbol">${themeInfo(theme.id).symbol}</span>
         <span>
           <span class="theme-name">${theme.name}</span>
-          <span class="theme-mood">${theme.mood}</span>
+          <span class="theme-mood">${themeInfo(theme.id).role}</span>
         </span>
       </span>
       <span class="theme-swatch">
@@ -399,8 +399,6 @@ function renderThemes() {
         <span style="background:${theme.accent3}"></span>
         <span style="background:${theme.accent2}"></span>
       </span>
-      <span class="theme-role">${themeInfo(theme.id).role}</span>
-      <span class="theme-traits">${themeInfo(theme.id).traits.map((trait) => `<span>${trait}</span>`).join("")}</span>
     </button>
   `).join("");
   themeGrid.querySelectorAll(".theme-card").forEach((button) => {
@@ -503,7 +501,7 @@ function renderEditor() {
 }
 
 function renderDashboard() {
-  const groups = ["말로 만들기", "AI 제작 보조", "장르 템플릿", ...activeGenre().featureGroups, "에셋 기능", "노코드/로우코드 로직", "실제 코드 생성", "미리보기/테스트", "프로젝트 관리", "Canna다운 기능"];
+  const groups = ["말로 만들기", "AI 제작 보조", "장르 템플릿", ...activeGenre().featureGroups, "미리보기/테스트", "프로젝트 관리", "Canna다운 기능"];
   const meta = themeInfo();
   editorPanel.innerHTML = `
     <div class="hero-workbench">
@@ -536,7 +534,7 @@ function groupCard(group) {
   return `
     <article class="feature-card">
       <header><strong>${group}</strong><span>${items.length}</span></header>
-      <div class="chip-row">${items.slice(0, 12).map((item) => `<button class="chip feature-chip" data-feature="${escapeHtml(item)}">${item}</button>`).join("")}</div>
+      <div class="chip-row">${items.slice(0, 7).map((item) => `<button class="chip feature-chip" data-feature="${escapeHtml(item)}">${item}</button>`).join("")}</div>
     </article>
   `;
 }
